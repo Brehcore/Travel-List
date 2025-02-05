@@ -1,9 +1,8 @@
 package com.coretech.TravelList.controllers;
 
-import com.coretech.TravelList.TravelListDTO.TrvListCustomDTO;
-import com.coretech.TravelList.TravelListDTO.TrvListDTO;
-import com.coretech.TravelList.entities.Travel;
-import com.coretech.TravelList.servces.TravelService;
+import com.coretech.TravelList.TravelListDTO.TravelCustomDTO;
+import com.coretech.TravelList.TravelListDTO.TravelDTO;
+import com.coretech.TravelList.services.TravelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,14 +19,14 @@ public class TravelController {
     private TravelService travelService;
 
     @GetMapping(value = "/{id}")
-    public TrvListDTO findAll(@PathVariable Long id){
-        TrvListDTO result = travelService.finById(id);
+    public TravelDTO findAll(@PathVariable Long id){
+        TravelDTO result = travelService.finById(id);
         return result;
     }
 
     @GetMapping
-    public List<TrvListCustomDTO> findAll(){
-        List<TrvListCustomDTO> result = travelService.findAll();
+    public List<TravelCustomDTO> findAll(){
+        List<TravelCustomDTO> result = travelService.findAll();
         return result;
     }
 }

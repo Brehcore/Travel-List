@@ -3,7 +3,7 @@ package com.coretech.TravelList.TravelListDTO;
 import com.coretech.TravelList.entities.Travel;
 import org.springframework.beans.BeanUtils;
 
-public class TrvListDTO {
+public class TravelDTO {
 
     private Long id;
     private String title;
@@ -14,10 +14,9 @@ public class TrvListDTO {
     private String imgUrl;
     private String description;
 
-    public TrvListDTO() {
-    }
+    public TravelDTO() {}
 
-    public TrvListDTO(Travel entity) {
+    public TravelDTO(Travel entity) {
         BeanUtils.copyProperties(entity, this);
     }
 

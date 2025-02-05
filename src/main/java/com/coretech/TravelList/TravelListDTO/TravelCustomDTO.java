@@ -2,17 +2,17 @@ package com.coretech.TravelList.TravelListDTO;
 
 import com.coretech.TravelList.entities.Travel;
 
-public class TrvListCustomDTO {
+public class TravelCustomDTO {
 
     private Long id;
     private String title;
     private String monthToVisit;
     private String imgUrl;
 
-    public TrvListCustomDTO() {
+    public TravelCustomDTO() {
     }
 
-    public TrvListCustomDTO(Travel entity) {
+    public TravelCustomDTO(Travel entity) {
         id = entity.getId();
         title = entity.getTitle();
         monthToVisit = entity.getMonthToVisit();

@@ -6,6 +6,8 @@ import jakarta.persistence.ManyToOne;
 
 import java.util.Objects;
 
+// REFAZER ESSA CLASSE
+
 @Embeddable
 public class BelongingPK {
 

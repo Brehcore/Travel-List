@@ -1,7 +1,7 @@
-package com.coretech.TravelList.servces;
+package com.coretech.TravelList.services;
 
-import com.coretech.TravelList.TravelListDTO.TrvListCustomDTO;
-import com.coretech.TravelList.TravelListDTO.TrvListDTO;
+import com.coretech.TravelList.TravelListDTO.TravelCustomDTO;
+import com.coretech.TravelList.TravelListDTO.TravelDTO;
 import com.coretech.TravelList.entities.Travel;
 import com.coretech.TravelList.repositories.TravelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +17,15 @@ public class TravelService {
     TravelRepository travelRepository;
 
     @Transactional(readOnly = true)
-    public TrvListDTO finById(Long id) {
+    public TravelDTO finById(Long id) {
         Travel result = travelRepository.findById(id).get();
-        return new TrvListDTO(result);
+        return new TravelDTO(result);
         // Fazer tratamento de exceções
     }
 
     @Transactional(readOnly = true)
-    public List<TrvListCustomDTO> findAll() {
+    public List<TravelCustomDTO> findAll() {
        List<Travel> result =  travelRepository.findAll();
-       return result.stream().map(TrvListCustomDTO::new).toList();
+       return result.stream().map(x -> new TravelCustomDTO(x)).toList();
     }
 }

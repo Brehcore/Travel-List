@@ -11,14 +11,14 @@ public class TravelList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String title;
 
     public TravelList() {
     }
 
-    public TravelList(Long id, String name) {
+    public TravelList(Long id, String title) {
         this.id = id;
-        this.name = name;
+        this.title = title;
     }
 
     public Long getId() {
@@ -29,12 +29,12 @@ public class TravelList {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Override
