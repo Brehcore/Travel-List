@@ -3,6 +3,7 @@ package com.coretech.TravelList.services;
 import com.coretech.TravelList.TravelListDTO.TravelCustomDTO;
 import com.coretech.TravelList.TravelListDTO.TravelDTO;
 import com.coretech.TravelList.entities.Travel;
+import com.coretech.TravelList.projections.TravelCustomProjection;
 import com.coretech.TravelList.repositories.TravelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,11 @@ public class TravelService {
     public List<TravelCustomDTO> findAll() {
        List<Travel> result =  travelRepository.findAll();
        return result.stream().map(x -> new TravelCustomDTO(x)).toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<TravelCustomDTO> findByList(Long listId) {
+        List<TravelCustomProjection> result =  travelRepository.searchBy(listId);
+        return result.stream().map(x -> new TravelCustomDTO(x)).toList();
     }
 }

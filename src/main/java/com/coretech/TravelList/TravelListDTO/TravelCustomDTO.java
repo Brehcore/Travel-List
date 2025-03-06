@@ -1,6 +1,7 @@
 package com.coretech.TravelList.TravelListDTO;
 
 import com.coretech.TravelList.entities.Travel;
+import com.coretech.TravelList.projections.TravelCustomProjection;
 
 public class TravelCustomDTO {
 
@@ -9,7 +10,7 @@ public class TravelCustomDTO {
     private String monthToVisit;
     private String imgUrl;
 
-    public TravelCustomDTO() {
+    public TravelCustomDTO(TravelCustomProjection x) {
     }
 
     public TravelCustomDTO(Travel entity) {
